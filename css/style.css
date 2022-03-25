@@ -11,7 +11,7 @@ html {
     min-width: 768px;
     /*max-width: 1200px;*/
     
-    margin: auto;
+    /*margin: auto;*/
     /*Changes default font*/
     font-family: PT Sans;
     line-height: 1.7;
@@ -19,7 +19,9 @@ html {
 }
 
 * {
-    border-radius: 5px;
+    padding: 0%;
+    margin: 0%;
+    
     text-shadow: 10px;
     animation-duration: 0.5s;
 }
@@ -27,6 +29,11 @@ html {
 @media only screen and (max-width: 768px) {
     html {
         margin-left: 0%;
+    }
+
+    * {
+        padding: 0%;
+        margin: 0%;
     }
 }
 
@@ -50,6 +57,10 @@ a {
     text-decoration: none;
 }
 
+p {
+    font-size: 18px;
+}
+
 /* Idividual properties */
 
 #header {
@@ -60,6 +71,7 @@ a {
     display: flex;
     height: 100vh;
     min-height: 400px;
+    margin-bottom: 80px;
 }
 
 #header .content {
@@ -87,9 +99,8 @@ a {
 }
 
 #header #header-menu #contacts {
-    display: inline;
+    
     float: right;
-    margin-left: auto;
 }
 
 #header #header-menu #contacts i {
@@ -97,7 +108,7 @@ a {
 }
 
 #header #header-menu #networks {
-    display: inline;
+    
     float: right;
 }
 
@@ -129,8 +140,14 @@ a {
 #header #header-title {
     grid-row-start: 2;
     grid-row-end: 3;
-    font-size: 64px;
+    margin-top: 66%;
     color: white;
+}
+
+#header #header-title h1 {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 64px;
 }
 
 #header #header-title #get-started {
@@ -141,6 +158,8 @@ a {
     border-width: 2px;
     border-radius: 15px;
     width: 150px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 @media only screen and (max-width: 768px) { /* TODO -> finish */
@@ -181,6 +200,13 @@ a {
 #services h2 {
     font-size: 40px;
     text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+}
+
+#services p {
+    font-size: 18px;
+    color: #bfbfbf;
 }
 
 #services .content > div:first-of-type{
@@ -198,6 +224,7 @@ a {
     
     margin: 40px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
     /*transition: 0.3s;*/
 }
 
@@ -224,6 +251,24 @@ a {
     color: #bfbfbf;
 }
 
+@media only screen and (max-width: 1200px) {
+    #services .content p {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #services .content > div:first-of-type {
+        flex-wrap: wrap;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #services .services-column {
+        width: 320px;
+        margin: 20px;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     #services .content p {
         margin-left: 20px;
@@ -242,11 +287,21 @@ a {
     }
 }
 
+
 /*------ABOUT------*/
 
 #about {
-    padding-left: 20%;
-    background-color: gainsboro;
+    padding-left: 15%;
+    padding-right: 15%;
+    background-color: #f7f7f7;
+}
+
+#about h2 {
+    font-size: 32px;
+}
+
+#about p {
+    color: #4d4d4d;
 }
 
 #about .content {
@@ -288,6 +343,10 @@ a {
 
 /*------TEAM------*/
 
+#team {
+    border-bottom: 1px dashed black;
+}
+
 #team .content {
     max-width: 1200px;
     margin: auto;
@@ -295,7 +354,6 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: stretch;
-    border-bottom: 1px dashed black;
     margin-bottom: 80px;
 }
 
@@ -303,14 +361,33 @@ a {
     align-self: flex-start;
     width: 100%;
     text-align: center;
+    font-size: 40px;
+    font-family: PT Sans;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
 #team .content .team-card {
     text-align: center;
-    width: 18%;
+    width: 20%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    padding: 0 20px;
+    border-radius: 5px;
+    padding: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
     margin-bottom: 80px;
+}
+
+#team .content .team-card h3 {
+    font-size: 24px;
+}
+
+#team .content .team-card h4 {
+    color: #4d4d4d;
+}
+
+#team .content .team-card p {
+    color: #bfbfbf;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -319,13 +396,18 @@ a {
     }
 
     #team .content .team-card {
-        width: 10%;
+        width: 20%;
     }
+}
+
+@media only screen and (max-width: 768px) {
+    #team .content .team-card {
+        width: 18%;
+    }   
 }
 
 #team .content .team-card img {
     object-fit: cover;
-    padding-top: 20px;
     width: 100%;
 }
 
@@ -345,54 +427,86 @@ a {
 #stats .content .stats-card { 
     width: 25%;
     max-width: 300px;
+    height: 50%;
     text-align: center;
-    padding: 20px;   
-    background-color: gray;
+    background-color: #4d4d4d;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#stats .content .stats-card i {
+    color: steelblue;
+    size: 200px;
 }
 
 #stats .content .stats-card h3 { 
-    font-size: 36px;
+    font-size: 32px;
+    margin: 0px;
+    color: white;
+}
+
+#stats .content .stats-card p {
+    color: white;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    #stats .content .stats-card {
+        margin: 10px;
+    }
 }
 
 /*------PRICE------*/
 
 #price {
-    max-width: 1200px;
-    margin: auto;
-    background-color: #bfbfbf;
+    background-color: #f7f7f7;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
+#price .content {
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
 #price .content h2 {
     text-align: center;
+    font-size: 32px;
+    margin-bottom: 50px;
 }
 
 #price .content table {
+    border-collapse: collapse;
     margin-left: 10%;
     width: 80%;
 }
 
-#price .content table tr th, tr td { /* TODO -> dorob medzeru medzi riadkami */
-    padding: 20px;
+#price .content table tbody tr td ul > li:first-of-type { /*TODO*/
+    text-decoration: none;
 }
 
-#price .content table tr th, tr td{
-    border-top: 1px dotted black;
-    border-bottom: 1px dotted black;
+#price .content table tr td {
+    border-top: 1px dotted steelblue;
+    border-bottom: 1px dotted steelblue;
+    margin: 20px;
     padding: 20px;
-
 }
 
 #price .content table tr td button {
     padding: 20px;
     position: relative;
     margin-left: 25%; /*center*/
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    border: 1px solid steelblue;
 }
 
 #price .content table thead, tbody {
     width: 80%;
-
 }
 
 /*------REFS------*/
@@ -405,6 +519,8 @@ a {
 }
 
 #refs .content {
+    margin-left: 15%;
+    margin-right: 15%;
     display: flex;
     justify-content: space-between;
 }
@@ -416,6 +532,7 @@ a {
 #refs .content .refs-card img {
     width: 60px;
     border-radius: 50%;
+    margin-top: 20px;
 }
 
 #refs .content .refs-card h3 {
@@ -446,7 +563,7 @@ a {
     content: '';
 	position: absolute;
 	bottom: 0;
-	left: 50%;
+	left: 20%;
 	width: 0;
 	height: 0;
 	border: 17px solid transparent;
@@ -457,16 +574,24 @@ a {
 	margin-bottom: -17px;
 }
 
+@media only  screen  and (max-width: 768px) {
+    #refs .content {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
 /*------CONTACT------*/
 
 #contact {
-    max-width: 1200px;
-    margin: auto;
+    border-top: 1px dashed black;
     margin-top: 40px;
     margin-bottom: 40px;
 }
 
 #contact .content {
+    max-width: 1200px;
+    margin: auto;
     display: grid;
     grid-template-columns: [first] 200px [second] 200px [third] 200px [fourth] 200px;
     grid-template-rows: repeat(5, 20%);
@@ -474,8 +599,13 @@ a {
 
 #contact .content h2 {
     text-align: center;
-    grid-column-start: 2;
-    grid-column-end: 6;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+    grid-column-start: 1;
+    grid-column-end: 20;
     grid-row-start: 1;
     grid-row-end: 1;
 }
@@ -488,7 +618,9 @@ a {
     height: 400px;
     width: 50%;
     margin-bottom: 40px;
+    border-radius: 5px;
 }
+
 
 #contact .content form {
     grid-column-start: 4;
@@ -497,12 +629,51 @@ a {
     grid-row-end: 5;
 }
 
+#contact .content form input, textarea {
+    margin: 10px;
+    padding: 20px;
+    color: steelblue;
+    border: 1px solid steelblue;
+    border-radius: 5px;
+}
+
+#contact .content form input:invalid {
+    border: 1px solid red;
+}
+
+#contact .content form input:placeholder-shown {
+    border: 1px solid steelblue;
+}
+
+#contact .content form #contact-name {
+    width: auto;
+    grid-column-start: 5;
+    grid-column-end: 10;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#contact .content form #contact-email {
+    width: auto;
+}
+
+#contact .content form #contact-subject {
+    width: 76%;
+}
+
+#contact .content form #contact-message {
+    width: 76%;
+    height: 25%;
+}
+
 #contact .content #contact-submit {
-    width: 200px;
-    height: 30px;
+    width: 250px;
+    height: 40px;
     color: white;
     background-color: steelblue;
     border: none;
+    padding: 0%;
+    margin-left: 25%;
 }
 
 #contact .content #contact-submit:hover {
@@ -510,13 +681,30 @@ a {
 }
 
 @media only  screen  and (max-width: 768px) {
+    #contact {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
     #contact .content h2 {
         text-align: center;
-        grid-column-start: 1;
-        grid-column-end: 5;
-        grid-row-start: 1;
-        grid-row-end: 1;
+        
+        margin-left: -15%;
     }
+
+    #contact .content #contact-submit {
+        margin-left: -100%;
+    }
+
+    #contact .content form input {
+        margin-left: -50%;
+    }
+
+    #contact .content form textarea {
+        margin-left: -100%;
+    }
+
+    #contace .content form 
 }
 
 /*------FOOTER------*/
@@ -524,7 +712,7 @@ a {
 #footer {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     height: 150px;
     color: white;
     background-color: black;
