@@ -282,13 +282,30 @@ p {
     
 }
 
-.services-column:hover .services-card img { /* TODO -> finish */
-    filter: brightness(0) invert(0);
-    /*background-color: steelblue; */
-}
-
 .services-card img:nth-child(2) {
     width: 0%;
+}
+
+/* Inverted colors on image */
+.services-column:hover .services-card img:nth-child(1) {
+    display: none;
+    width: 0%;
+    border: none;
+}
+
+.services-column:hover .services-card img:nth-child(2) {
+    display: block;
+    width: 50px;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 28px; /* Very specific value but works */
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-color: steelblue;
+    border-width: 1px;
+    border-radius: 5px;
+    background-color: steelblue;
 }
 
 .services-card p {
