@@ -18,6 +18,9 @@ html {
     
 }
 
+
+/* Cant remember if this needs to be here 
+and at this point i am too afraid to remove it */
 * {
     padding: 0%;
     margin: 0%;
@@ -35,10 +38,6 @@ html {
         padding: 0%;
         margin: 0%;
     }
-}
-
-@media only screen and (max-width: 1200px) {
-
 }
 
 section {
@@ -197,10 +196,14 @@ p {
     }
 
     #header #header-menu #navigation {
-        width: 50%;
+        width: 100%;
     }
 
-
+    #header #header-title #contacts {
+        margin-right: 0%;
+        width: 100%;
+        float: right;
+    }
 }
 
 @media only screen and not (max-width: 768px) {
@@ -610,9 +613,27 @@ p {
     margin-left: 10px;
 }
 
+
 /* Speech bubble */
 #refs .content .refs-card blockquote span {
-    padding: 10px;
+    padding: 20px;
+}
+
+#refs .content .refs-card blockquote span::before {
+    content: "\"";
+    position: absolute;
+    color: steelblue;
+    left: 7px;
+    top: -20%;
+    width: 0;
+    height: 0;
+    font-style: italic;
+    font-size: 96px;
+}
+
+/* Change color of " to white on hover */
+#refs .content .refs-card blockquote:hover span::before {
+    color: white;
 }
 
 #refs .content .refs-card blockquote {  
@@ -717,6 +738,10 @@ p {
     color: red;
 }
 
+#contact .content form #contact-email::placeholder {
+    color: steelblue;
+}
+
 #contact .content form input:placeholder-shown {
     border: 1px solid steelblue;
 }
@@ -756,6 +781,7 @@ p {
     background-color: green;
 }
 
+/* Broken (i dont understand grid)*/
 @media only  screen  and (max-width: 768px) {
     #contact {
         margin-left: 20px;
@@ -764,23 +790,27 @@ p {
 
     #contact .content h2 {
         text-align: center;
-        
         margin-left: -15%;
+    }
+
+    #contact .content #contact-email {
+        margin-right: 20%;
     }
 
     #contact .content #contact-submit {
         margin-left: -100%;
+        
     }
 
     #contact .content form input {
         margin-left: -50%;
+    
     }
 
     #contact .content form textarea {
         margin-left: -100%;
+        
     }
-
-    #contace .content form 
 }
 
 /*------FOOTER------*/
